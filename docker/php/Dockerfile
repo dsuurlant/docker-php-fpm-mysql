@@ -1,10 +1,10 @@
 # see https://medium.com/@othillo/adding-composer-to-php-docker-images-using-multi-stage-builds-2a10967ae6c1
 
 # start with the official Composer image and name it
-FROM composer:1.9.1 AS composer
+FROM composer:1.10 AS composer
 
 # continue with the official PHP image
-FROM php:7.4.9-fpm-buster
+FROM php:7.4.10-fpm-buster
 
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
